@@ -1,0 +1,9 @@
+# Node stuff
+node_modules/
+npm-debug.log
+
+# Mac
+.DS_Store
+
+# Build Stuff (you can include this if you want to track it)
+dist/
