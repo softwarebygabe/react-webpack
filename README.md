@@ -1,2 +1,7 @@
 # react-webpack
-Barebones React App powered by Webpack
+Simple template for a React powered client app.
+### Includes:
+- React
+- Webpack
+- Typescript
+- CSS
