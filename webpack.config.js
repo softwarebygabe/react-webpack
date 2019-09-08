@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/app.js",
+  entry: "./src/app.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "app.bundle.js"
@@ -11,17 +11,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              babelrc: false,
-              presets: ["@babel/preset-env", "@babel/preset-react"]
-            }
-          }
-        ]
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/
       },
       {
         test: /\.html$/,
@@ -32,6 +24,9 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"]
   },
   plugins: [
     new HtmlWebPackPlugin({
